@@ -2,33 +2,37 @@ package main
 
 import (
 	"fmt"
-	"sort"
-	"strings"
+	
 )
 
 
 func main(){
 
-	greetings := "Hello there friends!"
-	fmt.Println(strings.Contains(greetings, "friends"))
-	fmt.Println(strings.Contains(greetings, "friends"))
-	fmt.Println(strings.ToUpper(greetings))
-	fmt.Println(strings.Index(greetings, "ll"))
-	fmt.Println(strings.Split(greetings, " "))
+	//loops
 
-	// for a slice of integers
-	ages := []int{100, 20, 130, 40, 15, 60, 17, 80, 9, 0}
+	// similar to while loop
+	x := 0
 
-	sort.Ints(ages)
-	fmt.Println(ages)
+	for x < 5 {
+		fmt.Println("The value of x is: ", x)
+		x++
+	}
 
-	index := sort.SearchInts(ages, 400)
-	fmt.Println("Found 40 at index ", index)
+	// for loop
 
-	// for a slice of strings
-	names := []string{"Charlie", "Alice", "Luigi", "Dave","Bob"}
-	sort.Strings(names)
+	for y := 0; y<5; y++ {
+		fmt.Println("The value of y is: ", y)
+	}
 
-	fmt.Println(names)
-	fmt.Println(sort.SearchStrings(names, "Bob"))
+	names := []string{"John", "Paul", "George", "Ringo"}
+
+	for index, value := range names {
+		fmt.Printf("The value at index %v is %v\n", index, value)
+	}
+
+	//if you do not need to use the index or value just replace any with an underscore
+
+	for _, value := range names {
+		fmt.Printf("The value is %v\n", value)
+	}
 }
