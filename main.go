@@ -1,37 +1,22 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
+
+//working with multiple files
 
 
-//multiple return values
+var score = 99.5
+func main() {
 
-func getInitials (n string) (string, string){
-	s := strings.ToUpper(n)
-	names := strings.Split(s, " ")
-	var initials []string
+// var score = 99.5 if score is declared here it will raise an error saying it is not defined and that is because now score is no longer under the package scope but in the main function
 
-	for _, v := range names {
-		initials = append(initials, v[:1])
-	}
+sayHello("Elite")
 
-	if len(initials) > 1 {
-		return initials[0], initials[1]
-	}
-	return initials[0], "_"
+for _, v := range points {
+	fmt.Println(v)
 }
 
-func main() {
-fn1, sn1 := getInitials("Tifa Lockhart")
-fn2, sn2 := getInitials("John Doe")
-fn3, sn3 := getInitials("barret")
-
-fmt.Println(fn1,sn1)
-fmt.Println(fn2,sn2)
-fmt.Println(fn3, sn3)
-
+showScore()
 
 	
 }
