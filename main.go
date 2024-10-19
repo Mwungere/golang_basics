@@ -2,37 +2,32 @@ package main
 
 import "fmt"
 
-// maps are like dictionaries in python or objects
-//in a map all keys must be of the same datatype and all values must be of the same datatype
+func updateName(x string) string{
+	x="Wedge"
+	return x
+}
 
-var score = 99.5
+func updateMenu (y map[string]float64){
+	y["coffee"] = 2.99
+}
 func main() {
+
+	// group A types -> strings, ints, bools, floats, arrays, tructs
+
+	name := "tifa"
+	name = updateName(name)
+	fmt.Println(name)
+
+	// group B types -> slices, maps, functions
+
 	menu := map[string]float64{
-		"soup": 4.99,
-		"pie":7.99,
-		"salad": 6.99,
-		"toffee padding": 3.55,
+		"pie": 5.95,
+		"ice cream": 3.99,
 	}
 
 	fmt.Println(menu)
-	fmt.Println(menu["pie"])
+	updateMenu(menu)
+	fmt.Println(menu)
 
-	for k, v := range menu{
-		fmt.Println(k,"-",v)
-	}
 
-	// ints as key type
-	phoneBook := map[int]string{
-		1234567: "Mario",
-		5435353: "Luigi",
-		3945854: "Peach",
-	}
-
-	fmt.Println(phoneBook)
-	fmt.Println(phoneBook[5435353])
-
-	phoneBook[5435353] = "Bowser"
-	for k, v := range phoneBook{
-		fmt.Println(k,"-",v)
-	}
 }
