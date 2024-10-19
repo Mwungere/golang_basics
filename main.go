@@ -2,21 +2,36 @@ package main
 
 import "fmt"
 
-//working with multiple files
-
+// maps are like dictionaries in python or objects
 
 var score = 99.5
 func main() {
+	menu := map[string]float64{
+		"soup": 4.99,
+		"pie":7.99,
+		"salad": 6.99,
+		"toffee padding": 3.55,
+	}
 
-// var score = 99.5 if score is declared here it will raise an error saying it is not defined and that is because now score is no longer under the package scope but in the main function
+	fmt.Println(menu)
+	fmt.Println(menu["pie"])
 
-sayHello("Elite")
+	for k, v := range menu{
+		fmt.Println(k,"-",v)
+	}
 
-for _, v := range points {
-	fmt.Println(v)
-}
+	// ints as key type
+	phoneBook := map[int]string{
+		1234567: "Mario",
+		5435353: "Luigi",
+		3945854: "Peach",
+	}
 
-showScore()
+	fmt.Println(phoneBook)
+	fmt.Println(phoneBook[5435353])
 
-	
+	phoneBook[5435353] = "Bowser"
+	for k, v := range phoneBook{
+		fmt.Println(k,"-",v)
+	}
 }
