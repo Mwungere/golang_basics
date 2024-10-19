@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 // maps are like dictionaries in python or objects
+//in a map all keys must be of the same datatype and all values must be of the same datatype
 
 var score = 99.5
 func main() {
